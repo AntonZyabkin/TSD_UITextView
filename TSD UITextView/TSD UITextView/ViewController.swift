@@ -13,12 +13,7 @@ class ViewController: UIViewController {
     var secondBookButton = UIButton ()
     var thirdBookButton = UIButton ()
     var fourthBookButton = UIButton ()
-
     
-    
-    
-//    var testBarButtomItem = UIBarButtonItem ()
-    let settingUIView = UIView ()
     
     
     override func viewDidLoad() {
@@ -37,34 +32,36 @@ class ViewController: UIViewController {
         fourthBookButton = albumButton(vC: self,
                                       coord: CGRect(x: view.center.x + 10 , y: 450, width: 180, height: 300),
                                       imageName: "Image-4")
-        
-//        let testBarButtomItem = createCustomeButotn(imageName: "setting", selecton: #selector(createSettingUIView))
-//
-//        navigationItem.rightBarButtonItems = [testBarButtomItem]
-        
-        firstBookButton.addTarget(self, action: #selector(goToRead), for: .touchUpInside)
-        secondBookButton.addTarget(self, action: #selector(goToRead), for: .touchUpInside)
-        thirdBookButton.addTarget(self, action: #selector(goToRead), for: .touchUpInside)
-        fourthBookButton.addTarget(self, action: #selector(goToRead), for: .touchUpInside)
 
-        
-        
+        firstBookButton.addTarget(self, action: #selector(firstBook), for: .touchUpInside)
+        secondBookButton.addTarget(self, action: #selector(secondBook), for: .touchUpInside)
+        thirdBookButton.addTarget(self, action: #selector(thirdBook), for: .touchUpInside)
+        fourthBookButton.addTarget(self, action: #selector(fourthBook), for: .touchUpInside)
+
         view.addSubview(firstBookButton)
         view.addSubview(secondBookButton)
         view.addSubview(thirdBookButton)
         view.addSubview(fourthBookButton)
 }
-
-
     
-    @objc func createSettingUIView () {
-        settingUIView.backgroundColor = UIColor (red: 0.1, green: 0.1, blue: 0.1, alpha: 0.8)
-        settingUIView.layer.cornerRadius = 20
-        
-        view.addSubview(settingUIView)
+    
+    @objc func firstBook () {
+        goToRead()
+        curentBookNumber = 0
     }
-    
-    @objc func goToRead () {
+    @objc func secondBook () {
+        goToRead()
+        curentBookNumber = 1
+    }
+    @objc func thirdBook () {
+        goToRead()
+        curentBookNumber = 2
+    }
+    @objc func fourthBook () {
+        goToRead()
+        curentBookNumber = 3
+    }
+    func goToRead () {
         let newController = ReaderViewController ()
         navigationController?.pushViewController(newController, animated: true)
     }

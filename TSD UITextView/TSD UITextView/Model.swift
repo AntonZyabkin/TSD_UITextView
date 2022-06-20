@@ -42,7 +42,12 @@ func albumButton (vC: ViewController, coord: CGRect, imageName: String) -> UIBut
 }
 
 
-
+extension UIBarButtonItem {
+    func addTargetForAction(target: AnyObject, action: Selector) {
+        self.target = target
+        self.action = action
+    }
+}
 
 
 
