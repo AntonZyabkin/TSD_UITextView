@@ -9,6 +9,15 @@ import Foundation
 import UIKit
 
 var curentBookNumber = 0
+var curentFontType = "GillSans"
+let fontTypeArray = ["AppleSDGothicNeo-Thin",
+                     "GillSans-Italic",
+                     "GillSans",
+                     "AvenirNextCondensed-UltraLightItalic",
+                     "Noteworthy-Light",
+                     "Chalkduster",
+                     "Farah",
+                     "PartyLetPlain"]
 
 extension UIViewController {
     
